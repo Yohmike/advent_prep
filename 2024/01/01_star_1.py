@@ -3,10 +3,8 @@ https://adventofcode.com/2024/day/1
 
 """
 
-from typing import List
 
-
-def parse_input_and_solve(filename):
+def parse_input_and_solve(filename: str) -> int:
     left = []
     right = []
     with open(filename) as file:
