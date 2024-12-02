@@ -7,7 +7,9 @@ from typing import List
 
 
 def sign(number: int) -> int:
-    if number >= 0:
+    if number == 0:
+        return 0
+    if number > 0:
         return 1
     else:
         return -1
