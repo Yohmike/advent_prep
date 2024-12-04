@@ -3,9 +3,6 @@ https://adventofcode.com/2024/day/4
 
 """
 
-from typing import List
-import re
-
 
 def look_diagonally_for(matrix, row, col, letter):
     found = []
