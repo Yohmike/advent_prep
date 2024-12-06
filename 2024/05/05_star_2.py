@@ -25,6 +25,7 @@ def reorder_update(rules, update):
         for el2 in update:
             if el != el2:
                 if el in rules[el2]:
+                    # of elements before this element
                     left[el].append(el2)
 
     ordering = [0 for _ in range(len(update))]
