@@ -3,6 +3,21 @@ https://adventofcode.com/2024/day/21
 
 """
 
+from functools import wraps
+from time import time
+
+
+def timing(f):
+    @wraps(f)
+    def wrap(*args, **kw):
+        ts = time()
+        result = f(*args, **kw)
+        te = time()
+        print("func:%r args:[%r, %r] took: %2.4f sec" % (f.__name__, args, kw, te - ts))
+        return result
+
+    return wrap
+
 
 def mix_prune(secret, value):
     return (secret ^ value) % 16777216
@@ -26,6 +41,7 @@ def generate_secret(start, times=2000):
     return next
 
 
+@timing
 def parse_input_and_solve(filename: str) -> int:
     with open(filename) as file:
         lines = file.readlines()
